@@ -1,0 +1,25 @@
+package com.users.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.users.bean.Customer;
+import com.users.dao.CustDao;
+
+@Service
+public class CustService {
+
+	@Autowired
+	private CustDao dao;
+	
+	public String saveCustomer(Customer c) {
+		if(dao.saveAndFlush(c)!=null) {
+			return "Successfully saved with Customer Id: "+dao.getCustomerByEmail(c.getEmail()).getId();
+		}
+		return "failed";
+	}
+	
+	public String verifyRecords(Customer c) {
+		Customer cust=dao.findByEmail
+	}
+}

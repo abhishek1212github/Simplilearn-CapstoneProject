@@ -1,0 +1,9 @@
+package com.users.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.users.bean.Customer;
+
+public interface CustDao extends JpaRepository<Customer, Integer> {
+
+}

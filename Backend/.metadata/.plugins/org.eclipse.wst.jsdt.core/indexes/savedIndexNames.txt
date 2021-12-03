@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+A:\FoodBox\Backend\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1686483413.index
+2757114767.index
+844357067.index
+542433535.index
+3650352682.index

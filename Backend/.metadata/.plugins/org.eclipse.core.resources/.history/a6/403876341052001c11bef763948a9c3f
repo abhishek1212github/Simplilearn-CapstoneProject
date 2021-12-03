@@ -1,0 +1,15 @@
+package com.order.dao;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.order.bean.OrderFood;
+
+@Repository
+public interface OrderFoodDao extends JpaRepository<OrderFood, Integer>{
+
+	@Query("insert into OrderFood (orderId,id) values (?1,?2)")
+	OrderFood saveOrderFood(Integer orderId, Integer id);
+
+}

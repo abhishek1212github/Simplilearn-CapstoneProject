@@ -1,0 +1,19 @@
+package com.order.bean;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Order {
+
+	@Id
+	private String orderId;
+	private String userId;
+	@OneToMany(cascade = CASCADE.All)
+	private List<FoodItem> foods;
+	private Double totalAmount;
+	
+}

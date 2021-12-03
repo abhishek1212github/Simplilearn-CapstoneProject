@@ -1,0 +1,31 @@
+package com.users.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.users.bean.Customer;
+import com.users.service.CustService;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/customer")
+public class CustController {
+	
+	@Autowired
+	CustService ser;
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping
+	public String saveCustomer(Customer c) {
+		return ser.saveCustomer(c);
+	}
+	
+	/*@GetMapping("/{email}/{password}")
+	public String verifyRecords(@PathVariable String email,@PathVariable String password) {
+		return ser.verifyRecords(email,password);
+	}*/
+}

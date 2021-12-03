@@ -1,0 +1,14 @@
+package com.users.dao;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.users.bean.Customer;
+@Repository
+public interface CustDao extends JpaRepository<Customer, Integer> {
+
+	@Query("Select c from Customer c where c.email=?1")
+	String getUserIdByEmail(String email);
+
+}

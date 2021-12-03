@@ -1,0 +1,34 @@
+package com.order.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.order.bean.Order;
+import com.order.bean.OrderFood;
+import com.order.dao.OrderDao;
+import com.order.dao.OrderFoodDao;
+import com.order.dto.FoodItemDto;
+import com.order.dto.OrderDto;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	OrderDao orderDao;
+	@Autowired
+	OrderFoodDao orderFoodDao;
+	
+	public boolean saveOrder(OrderDto orderDto)
+	{
+		for(FoodItemDto dto:orderDto.getFoods())
+			orderFoodDao.saveOrderFood(orderDto.getOrderId(),dto.getId());
+		if(orderDao.saveAndFlush(orderDto.convertFromDtoToEntity())!=null)	return true;
+		return false;
+		
+		
+		
+		
+	}
+}

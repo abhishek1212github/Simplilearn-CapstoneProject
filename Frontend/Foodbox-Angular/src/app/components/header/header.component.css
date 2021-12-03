@@ -1,0 +1,45 @@
+.logo{
+    position:relative;
+    top: 8px;
+    height: 80px;
+    width: 105px;
+    cursor: pointer;
+}
+.header-title{
+    position: relative;
+    top: 40px;
+    left:12px;
+    font-size: 64px;
+    color: #bf1e2e;
+}
+.btnMain{
+    font-size: 20px;
+    color:white;
+    margin-right: 15px;
+
+    
+}
+.btnMain:hover{
+    background: white;
+    border-radius: 5px;
+    color: rgb(56, 56, 197);
+}
+.modal-footer button{
+    background-color: #bf1e2e;
+    color:white
+}
+th{
+    color:#bf1e2e;
+}
+.navbar{
+    background: linear-gradient(to right,rgba(0,172,193,1) 0%,rgba(84,58,183,1) 100%);
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5px;
+  
+    max-width: 92%;
+
+
+}
